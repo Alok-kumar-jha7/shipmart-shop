@@ -1,0 +1,6 @@
+/* stylelint-disable at-rule-no-unknown */
+/* This file adds the requisite utility classes for Tailwind to work. */
+/* If not using Tailwind, remove these directives. Otherwise, ensure Tailwind is set up in your build process. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
