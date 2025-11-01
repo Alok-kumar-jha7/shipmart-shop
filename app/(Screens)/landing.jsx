@@ -11,7 +11,7 @@ const Landing = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
-        source={require('@/assets/images/background.png')}
+        source={require('../../assets/images/background.png')}
         style={styles.backgroundImg}
         resizeMode="cover"
       >

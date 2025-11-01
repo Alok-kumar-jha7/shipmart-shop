@@ -1,21 +1,37 @@
-import { ThemeProvider, DefaultTheme } from "@react-navigation/native";
+import { ThemeProvider, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
-import "./global.css";
+import "../global.css";
 import { useColorScheme } from "react-native";
+import { space } from "postcss/lib/list";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  useFonts({
+
+  const [fontsLoaded] = useFonts({
     "outfit-bold": require("../assets/font/Outfit-Bold.ttf"),
-    outfit: require("../assets/font/Outfit-Regular.ttf"),
+    "outfit": require("../assets/font/Outfit-Regular.ttf"),
+    SpaceMono: require("../assets/font/SpaceMono-Regular.ttf"),
+    "inter-regular": require("../assets/font/Inter_28pt-Regular.ttf"),
+    "inter-semibold": require("../assets/font/Inter_28pt-SemiBold.ttf"),
+    "inter-bold": require("../assets/font/Inter_28pt-Bold.ttf"),
+    "Poppins-Medium": require("../assets/font/Poppins-Medium.ttf"),
+    "Poppins-Regular": require("../assets/font/Poppins-Regular.ttf"),
+    "Poppins-bold": require("../assets/font/Poppins-Bold.ttf"),
+    "Poppins-SemiBold": require("../assets/font/Poppins-SemiBold.ttf"),
+    "Railway": require("../assets/font/Raleway.otf"),
+
   });
 
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DefaultTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="(Screens)/login" />
+         <Stack.Screen name="index" />
+        <Stack.Screen name="login" />
       </Stack>
     </ThemeProvider>
   );
