@@ -2,8 +2,11 @@ import { ThemeProvider, DefaultTheme, DarkTheme } from "@react-navigation/native
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import "../global.css";
-import { useColorScheme } from "react-native";
-import { space } from "postcss/lib/list";
+import { useColorScheme } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import Providers from "../config/providers";
+
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -19,7 +22,7 @@ export default function RootLayout() {
     "Poppins-Regular": require("../assets/font/Poppins-Regular.ttf"),
     "Poppins-bold": require("../assets/font/Poppins-Bold.ttf"),
     "Poppins-SemiBold": require("../assets/font/Poppins-SemiBold.ttf"),
-    "Railway": require("../assets/font/Raleway.otf"),
+    "Raleway": require("../assets/font/Raleway-Regular.ttf"),
 
   });
 
@@ -29,10 +32,16 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      <GestureHandlerRootView>
+        <Providers>
       <Stack screenOptions={{ headerShown: false }}>
-         <Stack.Screen name="index" />
-        <Stack.Screen name="login" />
-      </Stack>
+         <Stack.Screen name="index"/>
+        <Stack.Screen name="login"/>
+        </Stack>
+
+          <StatusBar style="auto" />
+          </Providers>
+      </GestureHandlerRootView>
     </ThemeProvider>
   );
 }
