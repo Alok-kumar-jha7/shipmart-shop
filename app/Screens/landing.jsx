@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Landing = () => {
   const handleGetStarted = () => {
-    router.replace('/login');
+    router.push('/Screens/login');
   };
 
   return (

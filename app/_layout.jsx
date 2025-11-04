@@ -36,7 +36,7 @@ export default function RootLayout() {
         <Providers>
       <Stack screenOptions={{ headerShown: false }}>
          <Stack.Screen name="index"/>
-        <Stack.Screen name="login"/>
+        <Stack.Screen name="Screens/login"/>
         </Stack>
 
           <StatusBar style="auto" />
