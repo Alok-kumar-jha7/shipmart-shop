@@ -78,7 +78,7 @@ export default function SignUp() {
                       color="#9CA3AF"
                     />
                     <TextInput
-                      className="ml-2 flex-1 font-poppins text-gray-900"
+                      className="ml-2 flex-1 font-poppins text-gray-900 mt-1"
                       placeholder="Enter your name"
                       keyboardType="default"
                       placeholderTextColor="#9CA3AF"
@@ -127,7 +127,7 @@ export default function SignUp() {
                     />
 
                     <TextInput
-                      className="ml-2 flex-1 font-poppins text-gray-900"
+                      className="ml-2 flex-1 font-poppins text-gray-900 mt-1"
                       placeholder="Enter your email"
                       keyboardType="email-address"
                       placeholderTextColor="#9CA3AF"
@@ -175,7 +175,7 @@ export default function SignUp() {
                     />
 
                     <TextInput
-                      className="ml-2 flex-1 font-poppins text-gray-900"
+                      className="ml-2 flex-1 font-poppins text-gray-900 mt-1"
                       placeholder="Enter your password"
                       secureTextEntry={!showPassword}
                       placeholderTextColor="#9CA3AF"

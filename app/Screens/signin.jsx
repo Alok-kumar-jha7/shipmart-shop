@@ -79,7 +79,7 @@ export default function SignIn() {
                     />
 
                     <TextInput
-                      className="ml-2 flex-1 font-poppins text-gray-900"
+                      className="ml-2 flex-1 font-poppins text-gray-900 mt-1" 
                       placeholder="Enter your email"
                       keyboardType="email-address"
                       placeholderTextColor="#9CA3AF"
@@ -99,7 +99,7 @@ export default function SignIn() {
             </View>
 
             {/* Password field */}
-            <View className="mt-4">
+            <View className="mt-2">
               <Text className="text-gray-800 text-xl mb-3 font-poppins-semibold">
                 Password
               </Text>
@@ -128,7 +128,7 @@ export default function SignIn() {
                     />
 
                     <TextInput
-                      className="ml-2 flex-1 font-poppins text-gray-900"
+                      className="ml-2 flex-1 font-poppins text-gray-900 mt-1"
                       placeholder="Enter your password"
                       secureTextEntry={!showPassword}
                       placeholderTextColor="#9CA3AF"
@@ -168,7 +168,7 @@ export default function SignIn() {
 
           {/* Submit Button */}
           <TouchableOpacity
-            className={`rounded-xl py-4 mt-8 ${
+            className={`rounded-xl py-4 mt-6 ${
               loginForm.formState.isValid ? "bg-blue-600" : "bg-gray-400"
             }`}
             // onPress={loginForm.handleSubmit(onLoginSubmit)}

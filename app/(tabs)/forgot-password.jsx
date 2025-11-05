@@ -101,6 +101,7 @@ export default function ForgotPassword() {
           className="flex-1 px-6"
           showsVerticalScrollIndicator={false}
         >
+                    <View className="flex-1" >
           <View className="flex-row items-center mt-4 mb-8">
             <TouchableOpacity
               onPress={handleBackToSignIn}
@@ -118,7 +119,7 @@ export default function ForgotPassword() {
           </View>
 
 
-          <Text className="text-3xl font-poppins-bold text-gray-900 mb-3 mt-14">
+          <Text className="text-3xl font-poppins-bold text-gray-900 mb-3 mt-8">
             Reset Your Password
           </Text>
           <Text className="text-gray-500 font-poppins text-base leading-relaxed mb-10">
@@ -155,7 +156,7 @@ export default function ForgotPassword() {
                     color="#9CA3AF"
                   />
                   <TextInput
-                    className="ml-3 flex-1 font-poppins text-gray-900 text-base"
+                    className="ml-3 flex-1 font-poppins text-gray-900 text-lg mt-1"
                     placeholder="Enter your email address"
                     keyboardType="email-address"
                     placeholderTextColor="#9CA3AF"
@@ -174,10 +175,11 @@ export default function ForgotPassword() {
           </View>
 
           {/* Submit Button */}
+
           <TouchableOpacity
             onPress={forgotPasswordForm.handleSubmit(onSubmit)}
             disabled={!forgotPasswordForm.formState.isValid}
-            className={`rounded-xl py-4 mb-12 ${
+            className={`rounded-xl py-4 mb-3 ${
               forgotPasswordForm.formState.isValid
                 ? "bg-blue-600"
                 : "bg-gray-400"
@@ -186,7 +188,19 @@ export default function ForgotPassword() {
             <Text className="text-white text-center text-lg font-poppins-semibold">
               Send Link
             </Text>
-          </TouchableOpacity>
+            </TouchableOpacity>
+            <View className=" rounded-xl p-4 justify-center items-center">
+              <Text className="text-gray-600 font-poppins text-base leading-relaxed">
+                Remeber your password?{"  "}
+                <Text
+                  className="text-blue-600 font-poppins-semibold"
+                  onPress={handleBackToSignIn}
+                >
+                 Sign In
+                </Text>
+              </Text>
+            </View>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
