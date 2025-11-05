@@ -80,7 +80,7 @@ export default function SignUp() {
                     <TextInput
                       className="ml-2 flex-1 font-poppins text-gray-900"
                       placeholder="Enter your name"
-                      keyboardType="email-address"
+                      keyboardType="default"
                       placeholderTextColor="#9CA3AF"
                       onBlur={onBlur}
                       onChangeText={onChange}
@@ -89,7 +89,12 @@ export default function SignUp() {
                     />
                   </View>
                 )}
-              />
+                          />
+                           {signupForm.formState.errors.name && (
+                <Text className="text-red-500 text-sm mt-1 font-poppins">
+                  {signupForm.formState.errors.name.message}
+                </Text>
+              )}
             </View>
 
             {/* Email field*/}
@@ -141,7 +146,7 @@ export default function SignUp() {
               )}
             </View>
             {/* Password field */}
-            <View className="mt-4">
+            <View className="mt-4 ">
               <Text className="text-gray-800 text-xl mb-3 font-poppins-semibold">
                 Password
               </Text>
@@ -197,15 +202,7 @@ export default function SignUp() {
                 </Text>
               )}
             </View>
-            <TouchableOpacity
-              className="self-end mt-4"
-              onPress={() => router.push("/forgot-password")}
-              // disabled={loginMutation.isPending}
-            >
-              <Text className="text-blue-600 font-poppins-semibold">
-                Forgot Password?
-              </Text>
-            </TouchableOpacity>
+
           </View>
 
           {/* Submit Button */}
@@ -246,7 +243,7 @@ export default function SignUp() {
                 />
               </View>
               <Text className="ml-4 text-gray-900 font-poppins-semibold text-lg">
-                Continue with Google
+                Signup with Google
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -260,7 +257,7 @@ export default function SignUp() {
               />
 
               <Text className="ml-4 text-gray-900 font-poppins-semibold text-lg">
-                Continue with Facebook
+                Signup with Facebook
               </Text>
             </TouchableOpacity>
           </View>

@@ -25,7 +25,7 @@ export default function SignIn() {
   });
   const handleSignUpNavigation = () => {
     router.push("/Screens/signup");
-  }
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-white">
@@ -48,8 +48,9 @@ export default function SignIn() {
           </View>
           {/* Forms */}
           <View className="gap-6 mt-8">
-            {/* Email field*/}
-            <View className="mt-6">
+            {/* Email*/}
+
+            <View className="mt-4">
               <Text className="text-gray-800 text-xl mb-3 font-poppins-semibold">
                 Email
               </Text>
@@ -96,6 +97,7 @@ export default function SignIn() {
                 </Text>
               )}
             </View>
+
             {/* Password field */}
             <View className="mt-4">
               <Text className="text-gray-800 text-xl mb-3 font-poppins-semibold">
@@ -154,7 +156,7 @@ export default function SignIn() {
               )}
             </View>
             <TouchableOpacity
-              className="self-end mt-2"
+              className="self-end "
               onPress={() => router.push("/forgot-password")}
               // disabled={loginMutation.isPending}
             >
@@ -226,8 +228,8 @@ export default function SignIn() {
               Don&apos;t have an account?{"  "}
             </Text>
             <TouchableOpacity
-            onPress={handleSignUpNavigation}
-            // disabled={loginMutation.isPending}
+              onPress={handleSignUpNavigation}
+              // disabled={loginMutation.isPending}
             >
               <Text className="text-blue-600 font-poppins-semibold">
                 Sign Up
