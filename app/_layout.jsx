@@ -2,7 +2,7 @@ import { ThemeProvider, DefaultTheme, DarkTheme } from "@react-navigation/native
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import "../global.css";
-import { useColorScheme,Text } from 'react-native';
+import { useColorScheme } from 'react-native';
 import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Providers from "../config/providers";
@@ -38,7 +38,7 @@ export default function RootLayout() {
          <Stack.Screen name="index"/>
         <Stack.Screen name="Screens/signin"/>
         </Stack>
-<Text></Text>
+
           <StatusBar style="auto" />
           </Providers>
       </GestureHandlerRootView>
